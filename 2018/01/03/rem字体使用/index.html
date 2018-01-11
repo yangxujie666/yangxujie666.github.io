@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/03/rem字体使用/index.html">
 <meta property="og:site_name" content="杨杰个人博客">
 <meta property="og:description" content="去除数组中重复对象 思路 ：给一个空对象，遍历数组，给空对象赋值，对象的键是数组每项的对象，然后值随便，这样重复的键，赋值同样的值，只会显示一个，达到排重的作用，最后使用Object.keys（）方法提取对象的键反到一个数组中123456789101112function newArr(arr)&amp;#123;    console.log(arr)    var unique = &amp;#123;&amp;#1">
-<meta property="og:updated_time" content="2018-01-03T02:39:49.329Z">
+<meta property="og:updated_time" content="2018-01-03T06:21:36.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组处理方法">
 <meta name="twitter:description" content="去除数组中重复对象 思路 ：给一个空对象，遍历数组，给空对象赋值，对象的键是数组每项的对象，然后值随便，这样重复的键，赋值同样的值，只会显示一个，达到排重的作用，最后使用Object.keys（）方法提取对象的键反到一个数组中123456789101112function newArr(arr)&amp;#123;    console.log(arr)    var unique = &amp;#123;&amp;#1">
@@ -176,7 +176,7 @@
 
         
         <a href="/2018/01/03/rem字体使用/" class="archive-article-date">
-  	<time datetime="2018-01-03T02:13:00.652Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
+  	<time datetime="2018-01-03T06:21:36.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
 </a>
         
       </header>
@@ -185,7 +185,8 @@
       
         <h2 id="去除数组中重复对象-思路-：给一个空对象，遍历数组，给空对象赋值，对象的键是数组每项的对象，然后值随便，这样重复的键，赋值同样的值，只会显示一个，达到排重的作用，最后使用Object-keys（）方法提取对象的键反到一个数组中"><a href="#去除数组中重复对象-思路-：给一个空对象，遍历数组，给空对象赋值，对象的键是数组每项的对象，然后值随便，这样重复的键，赋值同样的值，只会显示一个，达到排重的作用，最后使用Object-keys（）方法提取对象的键反到一个数组中" class="headerlink" title="去除数组中重复对象 思路 ：给一个空对象，遍历数组，给空对象赋值，对象的键是数组每项的对象，然后值随便，这样重复的键，赋值同样的值，只会显示一个，达到排重的作用，最后使用Object.keys（）方法提取对象的键反到一个数组中"></a>去除数组中重复对象 思路 ：给一个空对象，遍历数组，给空对象赋值，对象的键是数组每项的对象，然后值随便，这样重复的键，赋值同样的值，只会显示一个，达到排重的作用，最后使用Object.keys（）方法提取对象的键反到一个数组中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function newArr(arr)&#123;</div><div class="line">    console.log(arr)</div><div class="line">    var unique = &#123;&#125;;</div><div class="line">    arr.forEach(function(a)&#123; </div><div class="line">        console.log(JSON.stringify(a))</div><div class="line">        unique[ JSON.stringify(a) ] = 1 </div><div class="line">    &#125;);</div><div class="line">    console.log( unique )</div><div class="line">    console.log(Object.keys(unique))</div><div class="line">    arr= Object.keys(unique).map(function(u)&#123;return JSON.parse(u) &#125;);</div><div class="line">    return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="去除空对象"><a href="#去除空对象" class="headerlink" title="去除空对象"></a>去除空对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let newArr=[];</div><div class="line">for(let j in arr)&#123;</div><div class="line">  for(let prop in arr[j])&#123;</div><div class="line">      if(prop!=&apos;&apos;||arr[j][prop]!=&apos;&apos;)&#123;</div><div class="line">          newArr.push(arr[j]);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-
+<h2 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var arr = [&#123;name: &quot;zlw&quot;, age: 24&#125;, &#123;name: &quot;wlz&quot;, age: 25&#125;,&#123;name: &quot;alz&quot;, age: 20&#125;];</div><div class="line">function compare(property)&#123;</div><div class="line">    return function(a,b)&#123;</div><div class="line">        console.log(a,b)</div><div class="line">        var value1 = a[property];</div><div class="line">        var value2 = b[property];</div><div class="line">        return value2 - value1;</div><div class="line">    &#125;</div><div class="line">  &#125;            </div><div class="line">console.log(arr.sort(compare(&quot;age&quot;)));</div></pre></td></tr></table></figure>
+<h3 id="如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。"><a href="#如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。" class="headerlink" title="如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。"></a>如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。</h3><h3 id="如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数-a-和-b，其返回值如下："><a href="#如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数-a-和-b，其返回值如下：" class="headerlink" title="如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下："></a>如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：</h3><h4 id="●-若-a-小于-b，在排序后的数组中-a-应该出现在-b-之前，则返回一个小于-0-的值。"><a href="#●-若-a-小于-b，在排序后的数组中-a-应该出现在-b-之前，则返回一个小于-0-的值。" class="headerlink" title="● 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。"></a>● 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。</h4><h4 id="●-若-a-等于-b，则返回-0。"><a href="#●-若-a-等于-b，则返回-0。" class="headerlink" title="● 若 a 等于 b，则返回 0。"></a>● 若 a 等于 b，则返回 0。</h4><h4 id="●-若-a-大于-b，则返回一个大于-0-的值。"><a href="#●-若-a-大于-b，则返回一个大于-0-的值。" class="headerlink" title="● 若 a 大于 b，则返回一个大于 0 的值。"></a>● 若 a 大于 b，则返回一个大于 0 的值。</h4>
       
 
       
@@ -278,18 +279,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/03/地址栏解析参数/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/11/获取开始时间和结束时间/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          地址栏解析参数
+          获取一周内，一月内，一年内的开始时间和结束时间
         
       </div>
     </a>
   
   
-    <a href="/2018/01/02/判断浏览器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">判断浏览器版本</div>
+    <a href="/2018/01/03/判断浏览器版本 - 副本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">地址栏解析参数</div>
       <i class="icon-circle-right"></i>
     </a>
   
