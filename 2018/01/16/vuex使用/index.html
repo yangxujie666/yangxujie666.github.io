@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/1 | 杨杰个人博客</title>
+  <title>第一次使用vuex | 杨杰个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="杨杰个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/01/index.html">
+  <meta name="description" content="首先在main.js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下：123456789101112131415161718192021import Vuex from &amp;apos;vuex&amp;apos;Vue.use(Vuex);const store = new Vuex.Store(&amp;#123;    state: &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一次使用vuex">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/vuex使用/index.html">
 <meta property="og:site_name" content="杨杰个人博客">
+<meta property="og:description" content="首先在main.js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下：123456789101112131415161718192021import Vuex from &amp;apos;vuex&amp;apos;Vue.use(Vuex);const store = new Vuex.Store(&amp;#123;    state: &amp;#123;">
+<meta property="og:updated_time" content="2018-01-16T03:04:57.162Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨杰个人博客">
+<meta name="twitter:title" content="第一次使用vuex">
+<meta name="twitter:description" content="首先在main.js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下：123456789101112131415161718192021import Vuex from &amp;apos;vuex&amp;apos;Vue.use(Vuex);const store = new Vuex.Store(&amp;#123;    state: &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="杨杰个人博客" type="application/atom+xml">
   
@@ -159,259 +163,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vuex使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      第一次使用vuex
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/16/vuex使用/" class="archive-article-date">
+
+        
+        <a href="/2018/01/16/vuex使用/" class="archive-article-date">
   	<time datetime="2018-01-16T01:50:48.771Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/16/vuex使用/">第一次使用vuex</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="首先在main-js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下："><a href="#首先在main-js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下：" class="headerlink" title="首先在main.js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下："></a>首先在main.js里面使用vuex，state里面声明一些储存的值，通过mutations去改变state里面的状态值。代码如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">import Vuex from &apos;vuex&apos;</div><div class="line"></div><div class="line">Vue.use(Vuex);</div><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">    state: &#123;</div><div class="line">        count: false</div><div class="line">    &#125;,</div><div class="line">    mutations: &#123;</div><div class="line">        changeState (state, payload) &#123;</div><div class="line">            state.count = payload.val</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">//需要把store放在vue里面</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  router,</div><div class="line">  store,</div><div class="line">  template: &apos;&lt;App/&gt;&apos;,</div><div class="line">  components: &#123; App &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="然后在登陆页面修改store状态值由于vuex只是一个状态值，因此刷新页面的时候改变的值回还原初始化，因此需要结合sessionStorage，代码如下："><a href="#然后在登陆页面修改store状态值由于vuex只是一个状态值，因此刷新页面的时候改变的值回还原初始化，因此需要结合sessionStorage，代码如下：" class="headerlink" title="然后在登陆页面修改store状态值由于vuex只是一个状态值，因此刷新页面的时候改变的值回还原初始化，因此需要结合sessionStorage，代码如下："></a>然后在登陆页面修改store状态值由于vuex只是一个状态值，因此刷新页面的时候改变的值回还原初始化，因此需要结合sessionStorage，代码如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sessionStorage.setItem(&apos;loginState&apos;,this.userName)</div><div class="line">this.$store.commit(&apos;changeState&apos;,&#123;val: true&#125;);</div></pre></td></tr></table></figure>
+<h2 id="最后在页面判断是否登陆，代码如下"><a href="#最后在页面判断是否登陆，代码如下" class="headerlink" title="最后在页面判断是否登陆，代码如下"></a>最后在页面判断是否登陆，代码如下</h2>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>你的打赏是我的动力！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/16/vuex使用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/11/获取开始时间和结束时间/" class="archive-article-date">
-  	<time datetime="2018-01-11T04:52:46.917Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/03/05/媒体查询/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          媒体查询
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/11/获取开始时间和结束时间/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">获取一周内，一月内，一年内的开始时间和结束时间</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/11/获取开始时间和结束时间/">获取一周内，一月内，一年内的开始时间和结束时间</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/03/rem字体使用/" class="archive-article-date">
-  	<time datetime="2018-01-03T06:21:36.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/03/rem字体使用/">数组处理方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/03/判断浏览器版本 - 副本/" class="archive-article-date">
-  	<time datetime="2018-01-03T06:21:33.461Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/03/判断浏览器版本 - 副本/">地址栏解析参数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/03/点击排除控件元素/" class="archive-article-date">
-  	<time datetime="2018-01-03T05:49:14.382Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/03/vueX/" class="archive-article-date">
-  	<time datetime="2018-01-03T03:18:18.551Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/03/vueX/">vuex最简单、最详细的入门文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/03/地址栏解析参数/" class="archive-article-date">
-  	<time datetime="2018-01-03T02:43:44.100Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/03/地址栏解析参数/">地址栏解析参数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/03/数组方法/" class="archive-article-date">
-  	<time datetime="2018-01-03T02:13:00.652Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/03/数组方法/">数组处理方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/02/判断浏览器/" class="archive-article-date">
-  	<time datetime="2018-01-02T06:33:06.678Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/02/判断浏览器/">判断浏览器版本</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -434,8 +343,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
